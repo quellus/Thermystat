@@ -1,5 +1,7 @@
 # rpi-thermostat
 
+**WARNING:** this project is a work in progress and is not in a working state yet. For a working thermostat, please see [rpi-thermostat](https://github.com/quellus/rpi-thermostat)
+
 A cooler and furnace controller run by a RaspberryPi with wireless arduino-based temperature sensors.
 
 ![image](https://github.com/user-attachments/assets/b730898e-81bf-48fd-b9f2-f95659548468)
