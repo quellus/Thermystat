@@ -8,10 +8,11 @@
 
 class Controller{
 public:
-	// Fetch singleton across threads
-	static Controller& getStaticObject();
-
 	Controller() = default;
+
+	float getTargetTemperature() {
+		return targetTemperature;
+	}
 
 private:
 	float targetTemperature;

@@ -5,12 +5,13 @@
 #include "Controller.h"
 
 const int DEFAULT_PORT = 18080;
+Controller cont;
 
 int main(int argc, char* argv[]) {
     crow::SimpleApp app;
 
     CROW_ROUTE(app, "/get_target_temperature").methods("GET"_method)([](){
-        static Controller& controller = Controller::getStaticObject();
+        cont.getTargetTemperature();
         return 200;
     });
     
