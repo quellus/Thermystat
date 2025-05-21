@@ -26,6 +26,17 @@ CPMAddPackage(Crow
   "CROW_ENABLE_SSL On"
 )
 
+include(CTest)
+enable_testing()
+
+CPMAddPackage(
+  NAME googletest
+  GITHUB_REPOSITORY google/googletest
+  GIT_TAG release-1.12.1
+  VERSION 1.12.1
+  OPTIONS "INSTALL_GTEST OFF" "gtest_force_shared_crt"
+)
+
 file(GLOB SOURCES "src/*.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE Crow::Crow)
