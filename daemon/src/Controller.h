@@ -11,7 +11,7 @@ public:
 	Controller() = default;
 
 	float getTargetTemperature() {
-		return targetTemperature;
+		return targetTemperature++;
 	}
 
 private:
@@ -19,7 +19,7 @@ private:
 	PinStatus pinStatus;
 	PinStatus usable;
 	std::vector<SensorStatus> sensorStatus;
-  //std::vector<int> history; // TODO make this not an int
+	//std::vector<int> history; // TODO make this not an int
   
 	mutable std::mutex m_mutex;
 };

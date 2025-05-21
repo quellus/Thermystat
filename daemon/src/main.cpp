@@ -11,8 +11,10 @@ int main(int argc, char* argv[]) {
     crow::SimpleApp app;
 
     CROW_ROUTE(app, "/get_target_temperature").methods("GET"_method)([](){
-        cont.getTargetTemperature();
-        return 200;
+        crow::response res;
+        res.code = 200;
+        res.body = std::to_string(cont.getTargetTemperature());
+        return res;
     });
     
     app.port(DEFAULT_PORT).multithreaded().run();
