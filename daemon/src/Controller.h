@@ -15,10 +15,10 @@ public:
 	}
 
 private:
-	float targetTemperature;
-	PinStatus pinStatus;
-	PinStatus usable;
-	std::vector<SensorStatus> sensorStatus;
+	float targetTemperature = 0;
+	// PinStatus pinStatus;
+	// PinStatus usable;
+	// std::vector<SensorStatus> sensorStatus;
 	//std::vector<int> history; // TODO make this not an int
   
 	mutable std::mutex m_mutex;

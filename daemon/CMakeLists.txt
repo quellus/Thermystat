@@ -37,7 +37,11 @@ CPMAddPackage(
   OPTIONS "INSTALL_GTEST OFF" "gtest_force_shared_crt"
 )
 
-file(GLOB SOURCES "src/*.cpp")
-add_executable(${PROJECT_NAME} ${SOURCES})
+file(GLOB BIN_SOURCES "src/*.cpp")
+add_executable(${PROJECT_NAME} ${BIN_SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE Crow::Crow)
 
+file(GLOB TEST_SOURCES "test/*.cpp")
+add_executable( runUnitTests ${TEST_SOURCES} )
+target_link_libraries(runUnitTests gtest gtest_main Crow::Crow)
+add_test( runUnitTests runUnitTests )
